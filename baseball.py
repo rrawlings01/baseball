@@ -40,21 +40,38 @@ reds['Losses'] = np.where(reds['W/L']=='L', 1, (np.where(reds['W/L']=='L-wo', 1,
 reds['Win-Percentage'] = reds['Wins'] / (reds['Wins'] + reds['Losses'])
 
 #Graph win comparisons
+# plt.rcParams['figure.figsize'] = (8,6)
+
+# plt.plot(brewers['Wins'], label = 'Brewers', c = 'navy')
+# plt.plot(cardinals['Wins'], label = 'Cardinals', c = 'red')
+# plt.plot(cubs['Wins'], label = 'Cubs', c = 'blue')
+# plt.plot(pirates['Wins'], label = 'Pirates', c = 'gold')
+# plt.plot(reds['Wins'], label = 'Reds', c = 'green')
+
+# plt.xticks(np.arange(0, len(brewers.index), step=10))
+# plt.xlabel('Game')
+# plt.ylabel('Wins')
+
+# plt.legend(loc = 'lower right')
+# plt.title('NL Central Wins Comparison ({})'.format(year))
+
+# plt.show()
+
+#graph win percentage comparisons
 plt.rcParams['figure.figsize'] = (8,6)
 
-plt.plot(brewers['Wins'], label = 'Brewers', c = 'navy')
-plt.plot(cardinals['Wins'], label = 'Cardinals', c = 'red')
-plt.plot(cubs['Wins'], label = 'Cubs', c = 'blue')
-plt.plot(pirates['Wins'], label = 'Pirates', c = 'gold')
-plt.plot(reds['Wins'], label = 'Reds', c = 'green')
+plt.plot(brewers['Win-Percentage'], label = 'Brewers', c = 'navy')
+plt.plot(cardinals['Win-Percentage'], label = 'Cardinals', c = 'red')
+plt.plot(cubs['Win-Percentage'], label = 'Cubs', c = 'blue')
+plt.plot(pirates['Win-Percentage'], label = 'Pirates', c = 'gold')
+plt.plot(reds['Win-Percentage'], label = 'Reds', c = 'green')
 
 plt.xticks(np.arange(0, len(brewers.index), step=10))
 plt.xlabel('Game')
-plt.ylabel('Wins')
+plt.ylabel('Win-Percentage')
 
 plt.legend(loc = 'lower right')
-plt.title('NL Central Wins Comparison ({})'.format(year))
+plt.title('NL Central Win Percentage Comparison ({})'.format(year))
 
 plt.show()
-
 
